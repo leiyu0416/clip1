@@ -10,17 +10,17 @@ import torch
 from torchvision.datasets import CIFAR100
 from PIL import Image
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-model, preprocess = clip.load('ViT-B/32', device)
+     model, preprocess = clip.load('ViT-B/32', device)
 
-image_input = preprocess(Image.open("HB1.jpg")).unsqueeze(0).to(device)
+     image_input = preprocess(Image.open("HB1.jpg")).unsqueeze(0).to(device)
 
-list = ('red', 'envelope', 'China','Red Envelope')
+     list = ('red', 'envelope', 'China','Red Envelope')
 
-text = clip.tokenize([(f"a photo of a {c}.") for c in list]).to(device)
+    text = clip.tokenize([(f"a photo of a {c}.") for c in list]).to(device)
 
-with torch.no_grad():
+    with torch.no_grad():
 
     image_features = model.encode_image(image_input)
     
