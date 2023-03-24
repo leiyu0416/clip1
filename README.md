@@ -5,6 +5,8 @@
 当标签是'red', 'envelope', 'China'三类时，envelope这个类别概率最大，当继续添加‘Red Envelope’时，预测概率为99.61%，有出现一边倒相信这是Red Envelope的。
 
 
+# More Examples
+
 import os
 import clip
 import torch
@@ -36,7 +38,7 @@ for value, index in zip(values, indices):
     print(f"{list[index]:>16s}: {100 * value.item():.2f}%")
 
 
-Top predictions:
+# Top predictions:
 
     Red Envelope: 99.61%
         envelope: 0.37%
