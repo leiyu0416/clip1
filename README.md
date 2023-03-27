@@ -4,6 +4,12 @@
 
 当标签是'red', 'envelope', 'China'三类时，envelope这个类别概率最大，当继续添加‘Red Envelope’时，预测概率为99.61%，有出现一边倒相信这是Red Envelope的。
 
+# 配置环境依赖的步骤
+     1、创建一个新的环境“conda activate clip”
+     2、语句命令“conda install --yes -c pytorch pytorch=1.7.1 torchvision cudatoolkit=10.2”
+     3、语句命令“pip install ftfy regex tqdm”
+     4、语句命令“pip install git+https://github.com/openai/CLIP.git”
+   
 # 代码
 
       import os
@@ -44,3 +50,14 @@ The output will look like the following (the exact numbers may be slightly diffe
              red: 0.00%
            China: 0.00%
 
+# 实验结果
+当标签是'red', 'envelope', 'China'三类时，envelope这个类别概率最大。
+        envelope: 99.37%
+             red: 0.41%
+           China: 0.22%
+
+当继续添加‘Red Envelope’时，预测概率为99.61%，有出现一边倒相信这是Red Envelope的。
+     Red Envelope: 99.61%
+        envelope: 0.37%
+             red: 0.00%
+           China: 0.00%
